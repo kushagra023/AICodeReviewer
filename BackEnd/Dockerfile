@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --only=production
+RUN npm install -f
 
 # Copy the rest of the application files
 COPY . .
@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the application
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
